@@ -3,40 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <title>Happy Birthday Swati 💚</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+  margin:0;
+  font-family:Segoe UI,sans-serif;
+  background:linear-gradient(to bottom,#d9f0df,#f3e8ff);
+}
+
+/* PASSWORD SCREEN */
+#password-screen{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.password-box{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.password-box input{
+  padding:10px;
+  width:220px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+.password-box button{
+  margin-top:15px;
+  padding:10px 25px;
+  background:#5a2d82;
+  color:white;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* GALLERY */
+.memory{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:80px 20px;
+  opacity:0;
+  transform:translateY(40px);
+  transition:.8s ease;
+}
+
+.memory img{
+  max-width:65%;
+  max-height:65vh;
+  object-fit:contain;
+  background:white;
+  padding:20px;
+  border-radius:25px;
+  box-shadow:0 20px 45px rgba(0,0,0,.25);
+}
+
+.memory.show{
+  opacity:1;
+  transform:translateY(0);
+}
+</style>
 </head>
-  
+
 <body>
 
 <!-- PASSWORD SCREEN -->
 <div id="password-screen">
   <div class="password-box">
     <h2>Enter Password 💚</h2>
-    <input type="password" id="passwordInput" placeholder="Enter password">
-    <button onclick="checkPassword()">Enter</button>
-    <p id="error"></p>
+    <input type="password" id="pw" placeholder="Enter password">
+    <br><br>
+    <button onclick="unlock()">Enter</button>
+    <p id="msg"></p>
   </div>
 </div>
 
 <!-- WEBSITE CONTENT -->
-<div id="website-content" style="display:none;">
+<div id="content" style="display:none">
 
   <div class="gallery">
-    <section class="memory"><img src="1.png"></section>
-    <section class="memory"><img src="2.png"></section>
-    <section class="memory"><img src="3.png"></section>
-    <section class="memory"><img src="4.png"></section>
-    <section class="memory"><img src="5.png"></section>
-    <section class="memory"><img src="6.png"></section>
-    <section class="memory"><img src="7.png"></section>
-    <section class="memory"><img src="8.png"></section>
-    <section class="memory"><img src="9.png"></section>
-    <section class="memory"><img src="10.png"></section>
-    <section class="memory"><img src="11.png"></section>
+    <div class="memory"><img src="1.png"></div>
+    <div class="memory"><img src="2.png"></div>
+    <div class="memory"><img src="3.png"></div>
+    <div class="memory"><img src="4.png"></div>
+    <div class="memory"><img src="5.png"></div>
+    <div class="memory"><img src="6.png"></div>
+    <div class="memory"><img src="7.png"></div>
+    <div class="memory"><img src="8.png"></div>
+    <div class="memory"><img src="9.png"></div>
+    <div class="memory"><img src="10.png"></div>
+    <div class="memory"><img src="11.png"></div>
   </div>
 
 </div>
 
-<script src="script.js"></script>
+<script>
+function unlock(){
+  if(document.getElementById("pw").value==="strawberry"){
+    document.getElementById("password-screen").style.display="none";
+    document.getElementById("content").style.display="block";
+  }else{
+    document.getElementById("msg").innerText="Wrong password 💔";
+  }
+}
+
+/* fade in */
+const obs=new IntersectionObserver(e=>{
+ e.forEach(x=>{
+  if(x.isIntersecting){x.target.classList.add("show")}
+ })
+},{threshold:.3});
+
+document.querySelectorAll(".memory").forEach(m=>obs.observe(m));
+</script>
+
 </body>
 </html>
