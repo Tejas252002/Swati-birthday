@@ -46,25 +46,38 @@ body {
   width: 100%;
 }
 
+/* EACH IMAGE SECTION */
 .memory {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 80px 20px;   /* MORE SPACE */
   opacity: 0;
   transform: translateY(40px);
   transition: 0.8s ease;
 }
 
+/* IMAGE STYLE */
 .memory img {
-  max-width: 90%;
-  max-height: 90vh;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  max-width: 80%;       /* SMALLER IMAGE */
+  max-height: 80vh;
+  background: white;
+  padding: 18px;        /* WHITE FRAME */
+  border-radius: 25px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.25);
 }
 
+/* FADE IN */
 .memory.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 768px) {
+  .memory img {
+    max-width: 95%;
+    padding: 12px;
+  }
 }
