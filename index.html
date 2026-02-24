@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
 <body>
 
+<div id="password-screen">
+    <div class="password-box">
+        <h2>Enter Password 💚</h2>
+        <input type="password" id="passwordInput" placeholder="Enter password">
+        <button onclick="checkPassword()">Enter</button>
+        <p id="error"></p>
+    </div>
+</div>
+
+<div id="website-content" style="display:none;">
+
     <div class="gallery">
-
-
         <section class="memory"><img src="1.png"></section>
         <section class="memory"><img src="2.png"></section>
         <section class="memory"><img src="3.png"></section>
@@ -16,13 +23,9 @@
         <section class="memory"><img src="9.png"></section>
         <section class="memory"><img src="10.png"></section>
         <section class="memory"><img src="11.png"></section>
-
     </div>
 
-    <div class="footer">
-        Made with love 💚
-    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
-</html>
