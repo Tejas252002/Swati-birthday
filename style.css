@@ -1,62 +1,37 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #d9f0df, #f3e8ff);
-    scroll-behavior: smooth;
-}
-
-.hero {
+#password-screen {
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #cce5d0;
-    text-align: center;
-    color: #5a2d82;
+    background: linear-gradient(to bottom, #d9f0df, #f3e8ff);
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-}
-
-.gallery {
-    width: 100%;
-}
-
-.memory {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.password-box {
+    background: white;
     padding: 40px;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-}
-
-.memory img {
-    max-width: 90%;
-    max-height: 90vh;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-}
-
-.memory.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.footer {
     text-align: center;
-    padding: 40px;
-    background: #e6d5f5;
-    color: #5a2d82;
-    font-weight: bold;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.password-box input {
+    padding: 10px;
+    width: 200px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.password-box button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #5a2d82;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.password-box button:hover {
+    background: #7a4da0;
 }
